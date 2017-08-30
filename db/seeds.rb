@@ -1,7 +1,109 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# dragon = Dragon.new(
+#                     name: "Smaug",
+#                     price: 500,
+#                     image: "http://ic.pics.livejournal.com/funf_vor_zwolf/23698501/7287/7287_original.jpg",
+#                     description: "Lives in a mountain with lots of gold. Eats hobbits. Hates dwarves.",
+#                     color: "Red",
+#                     amount_spikes: 50,
+#                     size: "Really Big"
+#                     )
+# dragon.save
+
+# dragon = Dragon.new(
+#                     name: "Drogon",
+#                     price: 250,
+#                     image: "https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2017/07/07124850/game-of-thrones-trailer2-screencap-drogon-600x314.jpg",
+#                     description: "Ideal mode of transportation for Mother of Dragons.",
+#                     color: "Black",
+#                     amount_spikes: 5,
+#                     size: "Big. Used to be smaller. Now it's big."
+#                     )
+# dragon.save
+
+# dragon = Dragon.new(
+#                     name: "Night Dragon (formerly Viserion)",
+#                     price: 9999,
+#                     image: "https://i.ytimg.com/vi/UJv6WIXHdlU/hqdefault.jpg",
+#                     description: "Ideal mode of destroying walls for Night's King. Really scary. Breathes blue fire. Winter is coming.",
+#                     color: "Bluish",
+#                     amount_spikes: 100,
+#                     size: "Does it matter? It's really scary."
+#                     )
+# dragon.save
+
+# dragon = Dragon.new(
+#                     name: "Charizard",
+#                     price: 250,
+#                     image: "https://vignette4.wikia.nocookie.net/pokemon/images/e/e5/006Charizard_AG_anime.png/revision/latest?cb=20131213083244",
+#                     description: "It's a pokemon. BUT it's the best pokemon.",
+#                     color: "Orange",
+#                     amount_spikes: 1,
+#                     size: "Pretty big, for a pokemon..."
+#                     )
+# dragon.save
+
+# dragon = Dragon.new(
+#                     name: "Hooktail",
+#                     price: 100,
+#                     image: "https://vignette2.wikia.nocookie.net/nintendo/images/b/b5/6a00b8ea0717f31bc000c2251cb1508fdb-500pi.jpg/revision/latest?cb=20090513035203&path-prefix=en",
+#                     description: "Made out of paper.",
+#                     color: "Red",
+#                     amount_spikes: 0,
+#                     size: "Big! But again, it's made out of paper."
+#                     )
+# dragon.save
+
+# dragon = Dragon.new(
+#                     name: "Alduin",
+#                     price: 1000,
+#                     image: "https://staticdelivery.nexusmods.com/mods/110/images/54070-1-1400583773.jpg",
+#                     description: "Also known as the World-Ender. Eats Nords.",
+#                     color: "Gold?",
+#                     amount_spikes: 500,
+#                     size: "So Big. The Biggest. Bigly."
+#                     )
+# dragon.save
+
+# dragon = Dragon.new(
+#                     name: "a komodo dragon",
+#                     price: 6,
+#                     image: "http://www.genesispark.com/wp-content/uploads/2011/11/Komodo-dragon.jpg",
+#                     description: "The Poor Man's Dragon.",
+#                     color: "Does it matter",
+#                     amount_spikes: 0,
+#                     size: "Tiny"
+#                     )
+# dragon.save
+
+# dragon = Dragon.new(
+#                     name: "Spyro",
+#                     price: 50,
+#                     image: "https://vignette2.wikia.nocookie.net/spyro/images/8/82/Spyro_005666.jpg/revision/latest?cb=20120202135233",
+#                     description: "Fights crime (maybe?), hits things with tail.",
+#                     color: "Purple",
+#                     amount_spikes: 1,
+#                     size: "Pretty small"
+#                     )
+# dragon.save
+
+# dragon = Dragon.new(
+#                     name: "Mushu",
+#                     price: 0,
+#                     image: "https://images.moviepilot.com/image/upload/c_fill,h_470,q_auto:good,w_620/e6ridqhrgz8ghcvei6ig.jpg",
+#                     description: "The REALLY Poor Man's Dragon.",
+#                     color: "Red",
+#                     amount_spikes: 0,
+#                     size: "Smaller than the komodo"
+#                     )
+# dragon.save
+
+# dragon = Dragon.new(
+#                     name: "Falkor",
+#                     price: 300,
+#                     image: "http://cdn.shopify.com/s/files/1/0995/2620/files/Falkor_large.jpg?9334199839447522413",
+#                     description: "Carries a little kid around. Basically a fluffier Appa. Yip. Yip.",
+#                     color: "White",
+#                     amount_spikes: 0,
+#                     size: "Large"
+#                     )
+# dragon.save

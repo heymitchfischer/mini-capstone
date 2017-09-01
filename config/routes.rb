@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  get '/dragons_all_url' => 'dragons#dragons_all_action'
+  get '/' => 'dragons#index'
+  get '/dragons' => 'dragons#index'
+  get '/dragons/:id' => 'dragons#show'
 end

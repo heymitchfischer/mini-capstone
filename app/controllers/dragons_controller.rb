@@ -1,6 +1,9 @@
 class DragonsController < ApplicationController
-  def dragons_all_action
+  def index
     @dragons = Dragon.all
-    render 'dragons_all_page.html.erb'
+  end
+
+  def show
+    @dragon = Dragon.find(params[:id])
   end
 end

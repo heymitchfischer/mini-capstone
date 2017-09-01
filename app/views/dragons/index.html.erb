@@ -1,8 +1,6 @@
-<h1>Buy Our Dragons</h1>
-
 <% @dragons.each do |dragon| %>
   <div>
-    <h2><%= dragon.name %>: $<%= dragon.price %></h3>
+    <h2><a href="/dragons/<%= dragon.id %>"><%= dragon.name %>: $<%= dragon.price %></a></h3>
     <h4><%= dragon.description %></h4>
     <img src=<%= dragon.image %>>
     <bk>

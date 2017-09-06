@@ -1,3 +1,6 @@
 <h2><%= @dragon.name %>: $<%= @dragon.price %></h3>
 <h4><%= @dragon.description %></h4>
 <img src=<%= @dragon.image %>>
+
+<a href="/dragons/<%= @dragon.id %>/edit">Edit the dragon</a>
+<a href="/dragons/<%= @dragon.id %>" data-method="delete">Delete the dragon</a>

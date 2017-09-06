@@ -1,0 +1,26 @@
+<h1>Edit the dragon:</h1>
+
+<%= form_tag "/dragons/#{@dragon.id}", method: :patch do %>
+  <div>
+    Name: <input type="text" name="name" value="<%= @dragon.name %>">
+  </div>
+  <div>
+    Price: <input type="integer" name="price" value=<%= @dragon.price %>>
+  </div>
+  <div>
+    Description: <input type="text" name="description" value="<%= @dragon.description %>">
+  </div>
+  <div>
+    Image: <input type="text" name="image" value="<%= @dragon.image %>">
+  </div>
+  <div>
+    How many spikes: <input type="integer" name="amount_spikes" value=<%= @dragon.amount_spikes %>>
+  </div>
+  <div> 
+    Color: <input type="text" name="color" value="<%= @dragon.color %>">
+  </div>
+  <div>
+    Size: <input type="text" name="size" value="<%= @dragon.size %>">
+  </div>
+  <input type="submit" value="update dragon">
+<% end %>

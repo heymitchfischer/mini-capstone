@@ -1,3 +1,5 @@
+<h3><a href="/dragons/new">Create new dragon?</a></h3>
+
 <% @dragons.each do |dragon| %>
   <div>
     <h2><a href="/dragons/<%= dragon.id %>"><%= dragon.name %>: $<%= dragon.price %></a></h3>

@@ -1,16 +1,27 @@
 body {
-  background-color: black;
-  color: red
+  background-image: url('dark-triangles.png');
+  font-family: TimesNewRoman,"Times New Roman",Times,Baskerville,Georgia,serif;
+  color: red;
+  text-align: center
 }
 
 h1 {
   text-align: center
 }
 
-div {
-  padding: 5px;
-  border-style: solid;
-  border-color: red;
-  border-width: 5px;
-  margin: 20px
+.well img {
+  width: 100%;
+  border: 5px solid red
+}
+
+.well {
+  border: 5px solid red
+}
+
+.product-index-single {
+  height: 500px;
+}
+
+.discount_item {
+  color: white
 }

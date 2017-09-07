@@ -1,10 +1,11 @@
 <h3><a href="/dragons/new">Create new dragon?</a></h3>
 
 <% @dragons.each do |dragon| %>
-  <div>
-    <h2><a href="/dragons/<%= dragon.id %>"><%= dragon.name %>: $<%= dragon.price %></a></h3>
-    <h4><%= dragon.description %></h4>
-    <img src=<%= dragon.image %>>
-    <bk>
+  <div class="col-md-4 col-sm-6 product-index-single">
+    <div class="well">
+      <h2><a href="/dragons/<%= dragon.id %>"><%= dragon.name %>: $<%= dragon.price %></a></h3>
+      <h4><%= dragon.description %></h4>
+      <img src=<%= dragon.image %>>
+    </div>
   </div>
 <% end %>

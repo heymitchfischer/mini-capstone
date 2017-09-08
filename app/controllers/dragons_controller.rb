@@ -6,7 +6,7 @@ class DragonsController < ApplicationController
   def new
     
   end
-
+D
   def create
     dragon = Dragon.new(
                         name: params[:name],

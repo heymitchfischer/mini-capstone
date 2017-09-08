@@ -1,7 +1,6 @@
 class Dragon < ApplicationRecord
-  def sale_message
-    return "Discount Item!" if price < 2
-    return "Everyday Value!" if price >= 2
+  def discounted?
+    price < 50
   end
 
   def tax
@@ -9,6 +8,6 @@ class Dragon < ApplicationRecord
   end
 
   def total
-    return self.tax + price
+    return tax + price
   end
 end

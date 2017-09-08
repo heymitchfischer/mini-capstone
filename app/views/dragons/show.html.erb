@@ -1,11 +1,11 @@
 <h2><%= @dragon.name %></h2>
-<% if @dragon.sale_message == "Discount Item" %>
-  <h3 class="discount_item"><%= @dragon.sale_message %></h3>
+<% if @dragon.discounted? %>
+  <h3>Discount Item!</h3>
 <% else %>
-  <h3><%= @dragon.sale_message %></h3>
+  <h3>Everyday Great Value!</h3>
 <% end %>
-<h3>Subtotal: $<%= @dragon.price %> (Tax: $<%= @dragon.tax%>)</h3>
-<h3>Total: $<%= @dragon.total %></h3>
+<h3 class="<%= "discount_item" if @dragon.discounted? %>">Subtotal: <%= number_to_currency(@dragon.price) %> (Tax: <%= number_to_currency(@dragon.tax) %>)</h3>
+<h3 class="<%= "discount_item" if @dragon.discounted? %>">Total: <%= number_to_currency(@dragon.total) %></h3>
 <h4><%= @dragon.description %></h4>
 <img src=<%= @dragon.image %>>
 

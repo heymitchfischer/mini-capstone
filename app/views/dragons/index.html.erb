@@ -5,7 +5,7 @@
     <div class="well">
       <h2><a href="/dragons/<%= dragon.id %>"><%= dragon.name %>: <%= number_to_currency(dragon.price) %></a></h3>
       <h4><%= dragon.description %></h4>
-      <img src=<%= dragon.image %>>
+      <img src=<%= dragon.images.first %>>
     </div>
   </div>
 <% end %>

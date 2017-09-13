@@ -107,3 +107,63 @@
 #                     size: "Large"
 #                     )
 # dragon.save
+
+# image = Image.new(
+#                   url: "http://ic.pics.livejournal.com/funf_vor_zwolf/23698501/7287/7287_original.jpg",
+#                   dragon_id: 1
+#                   )
+# image.save
+
+# image = Image.new(
+#                   url: "https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2017/07/07124850/game-of-thrones-trailer2-screencap-drogon-600x314.jpg",
+#                   dragon_id: 2
+#                   )
+# image.save
+
+# image = Image.new(
+#                   url: "https://i.ytimg.com/vi/UJv6WIXHdlU/hqdefault.jpg",
+#                   dragon_id: 3
+#                   )
+# image.save
+
+# image = Image.new(
+#                   url: "https://vignette4.wikia.nocookie.net/pokemon/images/e/e5/006Charizard_AG_anime.png/revision/latest?cb=20131213083244",
+#                   dragon_id: 4
+#                   )
+# image.save
+
+# image = Image.new(
+#                   url: "https://vignette2.wikia.nocookie.net/nintendo/images/b/b5/6a00b8ea0717f31bc000c2251cb1508fdb-500pi.jpg/revision/latest?cb=20090513035203&path-prefix=en",
+#                   dragon_id: 5
+#                   )
+# image.save
+
+# image = Image.new(
+#                   url: "https://staticdelivery.nexusmods.com/mods/110/images/54070-1-1400583773.jpg",
+#                   dragon_id: 6
+#                   )
+# image.save
+
+# image = Image.new(
+#                   url: "http://www.genesispark.com/wp-content/uploads/2011/11/Komodo-dragon.jpg",
+#                   dragon_id: 7
+#                   )
+# image.save
+
+# image = Image.new(
+#                   url: "https://vignette2.wikia.nocookie.net/spyro/images/8/82/Spyro_005666.jpg/revision/latest?cb=20120202135233",
+#                   dragon_id: 8
+#                   )
+# image.save
+
+# image = Image.new(
+#                   url: "https://images.moviepilot.com/image/upload/c_fill,h_470,q_auto:good,w_620/e6ridqhrgz8ghcvei6ig.jpg",
+#                   dragon_id: 9
+#                   )
+# image.save
+
+# image = Image.new(
+#                   url: "http://cdn.shopify.com/s/files/1/0995/2620/files/Falkor_large.jpg?9334199839447522413",
+#                   dragon_id: 10
+#                   )
+# image.save

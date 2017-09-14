@@ -35,7 +35,6 @@ class DragonsController < ApplicationController
 
   def show
     @dragon = Dragon.find(params[:id])
-    @images = @dragon.images
   end
 
   def edit

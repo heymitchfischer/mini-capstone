@@ -7,7 +7,7 @@
 <h3 class="<%= "discount_item" if @dragon.discounted? %>">Subtotal: <%= number_to_currency(@dragon.price) %> (Tax: <%= number_to_currency(@dragon.tax) %>)</h3>
 <h3 class="<%= "discount_item" if @dragon.discounted? %>">Total: <%= number_to_currency(@dragon.total) %></h3>
 <h4><%= @dragon.description %></h4>
-<% @images.each do |image| %>
+<% @dragon.images.each do |image| %>
   <img src=<%= image.url %>>
 <% end %>
 

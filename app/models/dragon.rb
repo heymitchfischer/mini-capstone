@@ -1,6 +1,9 @@
 class Dragon < ApplicationRecord
   belongs_to :supplier
   has_many :images
+  has_many :orders
+  has_many :category_dragons
+  has_many :categories, through: :category_dragons
 
   # def supplier
   #   Supplier.find_by(id: supplier_id)

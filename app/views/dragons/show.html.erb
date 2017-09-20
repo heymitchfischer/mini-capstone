@@ -7,8 +7,22 @@
 <h3 class="<%= "discount_item" if @dragon.discounted? %>">Subtotal: <%= number_to_currency(@dragon.price) %> (Tax: <%= number_to_currency(@dragon.tax) %>)</h3>
 <h3 class="<%= "discount_item" if @dragon.discounted? %>">Total: <%= number_to_currency(@dragon.total) %></h3>
 <h4><%= @dragon.description %></h4>
+<h4>Tags:</h4>
+<% @dragon.categories.each do |category| %>
+  <h4><%= category.name %></h4>
+<% end %>
 <% @dragon.images.each do |image| %>
   <img src=<%= image.url %>>
+<% end %>
+
+<%= form_tag '/orders', method: :post do %>
+  <div>
+    Quantity: <input type="text" name="quantity">
+  </div>
+  <div>
+    <input type="hidden" name="dragon_id" value="<%= @dragon.id %>">
+  </div>
+  <input type="submit" value="Buy Now!">
 <% end %>
 
 <a href="/dragons/<%= @dragon.id %>/edit">Edit the dragon</a>

@@ -4,12 +4,15 @@ class DragonsController < ApplicationController
     sort_attribute = params[:sort]
     order_attribute = params[:sort_order]
     search_term = params[:search_term]
+    category_name = params[:category_name]
     if sort_attribute && order_attribute
       @dragons = Dragon.all.order(sort_attribute => order_attribute)
     elsif sort_attribute
       @dragons = Dragon.all.order(sort_attribute)
     elsif search_term
       @dragons = @dragons.where("name iLike ?", "%#{search_term}%")
+    elsif category_name
+      @dragons = Category.find_by(name: category_name).dragons
     end
   end
 

@@ -1,7 +1,8 @@
 class Dragon < ApplicationRecord
   belongs_to :supplier
   has_many :images
-  has_many :orders
+  has_many :carted_dragons
+  has_many :orders, through: :carted_dragons
   has_many :category_dragons
   has_many :categories, through: :category_dragons
 

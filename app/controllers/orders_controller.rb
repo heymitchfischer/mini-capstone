@@ -1,18 +1,15 @@
 class OrdersController < ApplicationController
   def create
-    dragon = Dragon.find(params[:dragon_id])
-    order = Order.new(
-                      user_id: current_user.id,
-                      quantity: params[:quantity],
-                      dragon_id: params[:dragon_id]
-                      )
-    # order.calculate_totals
+    carted_dragons = current_user.current_cart
+    order = Order.new(user_id: current_user.id)
     order.save
+    carted_dragons.update_all(status: "ordered", order_id: order.id)
+    order.calculate_totals
     redirect_to "/orders/#{order.id}"
   end
 
   def show
     @order = Order.find(params[:id])
-    @dragon = Dragon.find(@order.dragon_id)
+    redirect_to "/dragons" unless current_user && current_user.id == @order.user_id
   end
 end

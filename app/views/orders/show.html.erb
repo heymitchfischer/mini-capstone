@@ -1,11 +1,14 @@
 <h1>Your Order:</h1>
-
 <h2>Order ID: <%= @order.id %></h2>
 <h2>Ordered on: <%= (@order.created_at).strftime("%B %e, %Y %l:%M %p") %></h2>
-<h2>Amount: <%= @order.quantity %></h2>
-<h2>Dragon ID: <%= @order.dragon_id %></h2>
 <h3>Subtotal: <%= number_to_currency(@order.subtotal) %></h3>
 <h3>Tax: <%= number_to_currency(@order.tax) %></h3>
 <h3>Total: <%= number_to_currency(@order.total) %></h3>
-<h4>Dragon: <%= @dragon.name %></h4>
-<img src="<%= @dragon.default_image %>">
+
+<h5>Your products:</h5>
+<% @order.carted_dragons.each do |carted_dragon| %>
+  <div>
+    <h3><%= carted_dragon.dragon.name %>(x<%= carted_dragon.quantity %>) at <%= number_to_currency(carted_dragon.dragon.price) %> each</h3> 
+    <img src="<%= carted_dragon.dragon.default_image %>">
+  </div>
+<% end %>

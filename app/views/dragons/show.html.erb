@@ -8,24 +8,28 @@
 <h3 class="<%= "discount_item" if @dragon.discounted? %>">Total: <%= number_to_currency(@dragon.total) %></h3>
 <h4><%= @dragon.description %></h4>
 <h4>Tags:</h4>
-<% @dragon.categories.each do |category| %>
-  <h4><%= category.name %></h4>
-<% end %>
+<ul>
+  <% @dragon.categories.each do |category| %>
+    <li><%= category.name %></li>
+  <% end %>
+</ul>
 <% @dragon.images.each do |image| %>
   <img src=<%= image.url %>>
 <% end %>
 
-<%= form_tag '/orders', method: :post do %>
+<%= form_tag '/carted_dragons', method: :post do %>
   <div>
     Quantity: <input type="text" name="quantity">
   </div>
   <div>
     <input type="hidden" name="dragon_id" value="<%= @dragon.id %>">
   </div>
-  <input type="submit" value="Buy Now!">
+  <input type="submit" value="Add to cart!">
 <% end %>
 
-<a href="/dragons/<%= @dragon.id %>/edit">Edit the dragon</a>
-<a href="/dragons/<%= @dragon.id %>" data-method="delete">Delete the dragon</a>
+<% if current_user && current_user.admin %>
+  <a href="/dragons/<%= @dragon.id %>/edit">Edit the dragon</a>
+  <a href="/dragons/<%= @dragon.id %>" data-method="delete">Delete the dragon</a>
+<% end %>
 
 <h6>Supplier: <%= @dragon.supplier.name %></h6>

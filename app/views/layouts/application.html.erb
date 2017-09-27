@@ -30,8 +30,10 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/dragons/new">Create New Dragon</a></li>
-            <li role="separator" class="divider"></li>
+            <% if current_user && current_user.admin %>
+              <li><a href="/dragons/new">Create New Dragon</a></li>
+              <li role="separator" class="divider"></li>
+            <% end %>
             <% if current_user %>
               <li><a href="/logout">Log Out</a></li>
             <% else %>
@@ -52,23 +54,22 @@
       <% end %>
 <!--       </form> -->
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="/carted_dragons">Checkout! (<%= @cart_count %>) </a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/dragons/?sort=price&sort_order=desc">Sort By Price: Descending</a></li>
             <li><a href="/dragons/?sort=price">Sort by Price: Ascending</a></li>
-            <li><a href="/dragons/?category_name=Scary">See: Scary</a></li>
-            <li><a href="/dragons/?category_name=Big">See: Big</a></li>
-            <li><a href="/dragons/?category_name=Cute">See: Cute</a></li>
-            <li><a href="/dragons/?category_name=Flying">See: Flying</a></li>
+            <li><a href="/dragons/?category=Scary">See: Scary</a></li>
+            <li><a href="/dragons/?category=Big">See: Big</a></li>
+            <li><a href="/dragons/?category=Cute">See: Cute</a></li>
+            <li><a href="/dragons/?category=Flying">See: Flying</a></li>
           </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-    <h1><a href="/dragons">Dragons</a></h2>
     <div class="container">
     <% flash.each do |name, message| %>
       <div class="alert alert-<%= name %> alert-dismissible" role="alert">

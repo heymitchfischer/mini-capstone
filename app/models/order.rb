@@ -1,14 +1,18 @@
 class Order < ApplicationRecord
-  belongs_to :dragon, optional: true
   belongs_to :user, optional: true
+  has_many :carted_dragons
+  has_many :dragons, through: :carted_dragons
 
   def initialize(options_hash)
     super(options_hash)
-    calculate_totals
   end
 
   def calculate_subtotal
-    self.subtotal = dragon.price * quantity
+    sum = 0
+    carted_dragons.each do |carted_dragon|
+      sum += carted_dragon.subtotal
+    end
+    self.subtotal = sum
   end
 
   def calculate_tax
@@ -23,5 +27,6 @@ class Order < ApplicationRecord
     calculate_subtotal
     calculate_tax
     calculate_total
+    save
   end
 end

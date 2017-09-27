@@ -1,0 +1,9 @@
+<h1>Your Cart</h1>
+
+<% @carted_dragons.each do |carted_dragon| %>
+  <h3><%= carted_dragon.dragon.name %>: <%= carted_dragon.quantity %></h3>
+  <%= link_to "Remove from cart", "/carted_dragons/#{carted_dragon.id}", method: :delete, class: "btn btn-primary" %>
+  <br>
+<% end %>
+
+<%= link_to "Buy now!", "/orders", method: :post, class: "btn btn-primary" %>

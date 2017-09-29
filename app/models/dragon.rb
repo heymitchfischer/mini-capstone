@@ -6,9 +6,11 @@ class Dragon < ApplicationRecord
   has_many :category_dragons
   has_many :categories, through: :category_dragons
 
-  # def supplier
-  #   Supplier.find_by(id: supplier_id)
-  # end
+  validates :name, presence: true
+  validates :name, uniqueness: true
+  validates :price, presence: true
+  validates :price, numericality: true
+  validates :description, length: { in: 2..500 }
 
   def discounted?
     price < 50

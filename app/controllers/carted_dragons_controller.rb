@@ -1,4 +1,6 @@
 class CartedDragonsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :index, :destroy]
+
   def index
     if current_user && current_user.current_cart.any?
       @carted_dragons = current_user.current_cart

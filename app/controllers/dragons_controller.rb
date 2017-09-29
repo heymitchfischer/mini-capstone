@@ -1,5 +1,5 @@
 class DragonsController < ApplicationController
-  before_action :authenticate_admin!, except: [:index, :show]
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @dragons = Dragon.all
@@ -23,22 +23,27 @@ class DragonsController < ApplicationController
 
   def new
     @suppliers = Supplier.all
+    @dragon = Dragon.new
   end
 
   def create
-    dragon = Dragon.new(
+    @dragon = Dragon.new(
                         name: params[:name],
                         price: params[:price],
                         description: params[:description],
-                        image: params[:image],
-                        amount_spikes: params[:amount_spikes],
                         color: params[:color],
                         size: params[:size],
-                        supplier_id: params[:supplier_id]
+                        supplier_id: params[:supplier_id],
+                        amount: params[:amount]
                         )
-    dragon.save
-    flash[:success] = "Dragon successfully created!"
-    redirect_to "/dragons/#{dragon.id}"
+    if @dragon.save
+      flash[:success] = "Dragon successfully created!"
+      redirect_to "/dragons/#{dragon.id}"
+    else
+      @suppliers = Supplier.all
+      @errors = @dragon.errors.full_messages
+      render "new.html.erb"
+    end
   end
 
   def show
@@ -46,23 +51,28 @@ class DragonsController < ApplicationController
   end
 
   def edit
+    @suppliers = Supplier.all 
     @dragon = Dragon.find(params[:id])
   end
 
   def update
-    dragon = Dragon.find(params[:id])
-    dragon.assign_attributes(
+    @dragon = Dragon.find(params[:id])
+    @dragon.assign_attributes(
                               name: params[:name],
                               price: params[:price],
                               description: params[:description],
-                              image: params[:image],
-                              amount_spikes: params[:amount_spikes],
                               color: params[:color],
-                              size: params[:size]
+                              size: params[:size],
+                              supplier_id: params[:supplier_id],
+                              amount: params[:amount]
                               )
-    dragon.save
-    flash[:info] = "Dragon successfully updated"
-    redirect_to "/dragons/#{dragon.id}"
+    if @dragon.save
+      flash[:info] = "Dragon successfully updated"
+      redirect_to "/dragons/#{@dragon.id}"
+    else 
+      @errors = @dragon.errors.full_messages
+      render "edit.html.erb"
+    end
   end
 
   def destroy

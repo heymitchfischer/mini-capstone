@@ -17,14 +17,18 @@
   <img src=<%= image.url %>>
 <% end %>
 
-<%= form_tag '/carted_dragons', method: :post do %>
-  <div>
-    Quantity: <input type="text" name="quantity">
-  </div>
-  <div>
-    <input type="hidden" name="dragon_id" value="<%= @dragon.id %>">
-  </div>
-  <input type="submit" value="Add to cart!">
+<% if current_user %>
+  <%= form_tag '/carted_dragons', method: :post do %>
+    <div>
+      Quantity: <input type="text" name="quantity">
+    </div>
+    <div>
+      <input type="hidden" name="dragon_id" value="<%= @dragon.id %>">
+    </div>
+    <input type="submit" value="Add to cart!">
+  <% end %>
+<% else %>
+  <p>Please <a href="/login">log in</a> to purchase items.</p>
 <% end %>
 
 <% if current_user && current_user.admin %>

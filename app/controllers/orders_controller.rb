@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
+  
   def create
     carted_dragons = current_user.current_cart
     order = Order.new(user_id: current_user.id)

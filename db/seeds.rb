@@ -1,17 +1,17 @@
-User.create!([
-  {name: "Doug", email: "Doug@me.com", password: "doug", password_confirmation: "doug", admin: false},
-  {name: "Mitch", email: "mitchfischer6@gmail.com", password: "mitch", password_confirmation: "mitch", admin: true}
-])
-Category.create!([
-  {name: "Scary"},
-  {name: "Big"},
-  {name: "Cute"},
-  {name: "Flying"},
-  {name: "Scary"},
-  {name: "Big"},
-  {name: "Cute"},
-  {name: "Flying"}
-])
+# User.create!([
+#   {name: "Doug", email: "Doug@me.com", password: "doug", password_confirmation: "doug", admin: false},
+#   {name: "Mitch", email: "mitchfischer6@gmail.com", password: "mitch", password_confirmation: "mitch", admin: true}
+# ])
+# Category.create!([
+#   {name: "Scary"},
+#   {name: "Big"},
+#   {name: "Cute"},
+#   {name: "Flying"},
+#   {name: "Scary"},
+#   {name: "Big"},
+#   {name: "Cute"},
+#   {name: "Flying"}
+# ])
 Supplier.create!([
   {name: "Dragons Inc.", email: "supplier@dragons.com", phone: "555-555-5556"},
   {name: "Valyria", email: "dragons@valyria.org", phone: "555-555-5557"}
